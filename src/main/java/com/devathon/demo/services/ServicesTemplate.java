@@ -1,5 +1,7 @@
 package com.devathon.demo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,4 +20,8 @@ public class ServicesTemplate {
 	  return repository.findByTitle(title);
   }
 
+  @GetMapping("/listOfServices")
+  public List<Services> findAll() {
+	  return repository.findAll();
+  }
 }
