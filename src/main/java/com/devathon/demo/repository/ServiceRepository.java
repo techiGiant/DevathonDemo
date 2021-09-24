@@ -7,5 +7,6 @@ import com.devathon.demo.entity.Services;
 
 public interface ServiceRepository extends MongoRepository<Services, String> {
 	  public Services findByTitle(String title);
+	  public Services findByServiceId(String serviceId);
 	  public List<Services> findAll();
 }

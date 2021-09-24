@@ -6,6 +6,7 @@ public class Services {
 	@Id
 	private String Id;
 	
+	public String serviceId;
 	public String title;
 	public String subTitle;
 	public String shortDesc;
@@ -15,9 +16,10 @@ public class Services {
 	public String cost;
 	
 
-	public Services(String title, String subTitle, String shortDesc, String longDesc, String category,
+	public Services(String serviceId, String title, String subTitle, String shortDesc, String longDesc, String category,
 			String imagePath, String cost) {
 		super();
+		this.serviceId = serviceId;
 		this.title = title;
 		this.subTitle = subTitle;
 		this.shortDesc = shortDesc;
@@ -26,10 +28,20 @@ public class Services {
 		this.imagePath = imagePath;
 		this.cost = cost;
 	}
+	
 	public Services() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public String getServiceId() {
+		return serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -72,11 +84,12 @@ public class Services {
 	public void setCost(String cost) {
 		this.cost = cost;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Services [title=" + title + ", subTitle=" + subTitle + ", shortDesc=" + shortDesc + ", longDesc="
-				+ longDesc + ", category=" + category + ", imagePath=" + imagePath + "]";
+		return "Services [Id=" + Id + ", serviceId=" + serviceId + ", title=" + title + ", subTitle=" + subTitle
+				+ ", shortDesc=" + shortDesc + ", longDesc=" + longDesc + ", category=" + category + ", imagePath="
+				+ imagePath + ", cost=" + cost + "]";
 	}
 
 }

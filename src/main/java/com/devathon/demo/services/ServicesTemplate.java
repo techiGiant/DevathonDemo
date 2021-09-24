@@ -19,6 +19,11 @@ public class ServicesTemplate {
   public Services getServiceByTitle (String title) {
 	  return repository.findByTitle(title);
   }
+  
+  @GetMapping("/serviceById")
+  public Services findByServiceId(String serviceId) {
+	  return repository.findByServiceId(serviceId);
+  }
 
   @GetMapping("/listOfServices")
   public List<Services> findAll() {
