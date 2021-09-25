@@ -1,5 +1,7 @@
 package com.devathon.demo.entity;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 public class Services {
@@ -14,10 +16,10 @@ public class Services {
 	public String category;
 	public String imagePath;
 	public String cost;
+	public List<String> packages;
 	
-
 	public Services(String serviceId, String title, String subTitle, String shortDesc, String longDesc, String category,
-			String imagePath, String cost) {
+			String imagePath, String cost, List<String> packages ) {
 		super();
 		this.serviceId = serviceId;
 		this.title = title;
@@ -27,11 +29,20 @@ public class Services {
 		this.category = category;
 		this.imagePath = imagePath;
 		this.cost = cost;
+		this.packages = packages;
 	}
 	
 	public Services() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public List<String> getPackages() {
+		return packages;
+	}
+
+	public void setPackages(List<String> packages) {
+		this.packages = packages;
 	}
 
 	public String getServiceId() {
@@ -89,7 +100,7 @@ public class Services {
 	public String toString() {
 		return "Services [Id=" + Id + ", serviceId=" + serviceId + ", title=" + title + ", subTitle=" + subTitle
 				+ ", shortDesc=" + shortDesc + ", longDesc=" + longDesc + ", category=" + category + ", imagePath="
-				+ imagePath + ", cost=" + cost + "]";
+				+ imagePath + ", cost=" + cost + ", packages=" + packages + "]";
 	}
 
 }
